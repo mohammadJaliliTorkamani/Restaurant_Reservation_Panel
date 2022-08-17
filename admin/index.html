@@ -22,401 +22,402 @@
 
 
 <body>
-<!-- modal for adding discount code -->
-<div align="right" class="add-discount-modal" id="add-discount-modal-id">
-    <div align="right" class="modal-dialog">
-        <div align="right" class="add-discount-modal-content">
-            <div align="right" class="add-discount-modal-header">
-                <h4 align="right" class="modal-title">افزودن کد تخفیف</h4>
-            </div>
-            <div align="right" class="add-discount-modal-body">
-                <div align="right" id="add-discount-modal-insert_form" method="post">
-                    <h4 align="right" color="white"></h4>
-                    <label align="right">کد تخفیف را وارد کنید</label>
-                    <br/>
-                    <input class="form-control" id="add-discount-modal-code" name="add-discount-modal-code"
-                           type="text"/>
-                    <br/>
-                    <label align="right">درصد کد تخفیف را وارد کنید</label>
-                    <input class="form-control" id="add-discount-modal-percentage"
-                           name="add-discount-modal-percentage"/>
-                    <br/>
-                    <label align="right">حداکثر ظرفیت استفاده را وارد کنید</label>
-                    <input class="form-control" id="add-discount-modal-max-usage" name="add-discount-modal-max-usage"
-                           type="text"/>
-                    <br/>
-                    <label align="right">نرخ تصدیق را بر حسب تومان وارد کنید</label>
-                    <input class="form-control" id="add-discount-modal-min-acceptable" name="add-discount-modal-min-acceptable"
-                           type="text"/>
-                    <br/>
-                    <input class="btn btn-success" id="insert" name="insert" onclick="addDisccountCodeInsert()" style="float: left"
-                           type="button"
-                           value="افزودن"/>
-                    <br/>
-                    <br/>
-                    <h4 align="right" color="white"></h4>
+    <!-- modal for adding discount code -->
+    <div align="right" class="add-discount-modal" id="add-discount-modal-id">
+        <div align="right" class="modal-dialog">
+            <div align="right" class="add-discount-modal-content">
+                <div align="right" class="add-discount-modal-header">
+                    <h4 align="right" class="modal-title">افزودن کد تخفیف</h4>
+                </div>
+                <div align="right" class="add-discount-modal-body">
+                    <div align="right" id="add-discount-modal-insert_form" method="post">
+                        <h4 align="right" color="white"></h4>
+                        <label align="right">کد تخفیف را وارد کنید</label>
+                        <br />
+                        <input class="form-control" id="add-discount-modal-code" name="add-discount-modal-code"
+                            type="text" />
+                        <br />
+                        <label align="right">درصد کد تخفیف را وارد کنید</label>
+                        <input class="form-control" id="add-discount-modal-percentage"
+                            name="add-discount-modal-percentage" />
+                        <br />
+                        <label align="right">حداکثر ظرفیت استفاده را وارد کنید</label>
+                        <input class="form-control" id="add-discount-modal-max-usage"
+                            name="add-discount-modal-max-usage" type="text" />
+                        <br />
+                        <label align="right">نرخ تصدیق را بر حسب تومان وارد کنید</label>
+                        <input class="form-control" id="add-discount-modal-min-acceptable"
+                            name="add-discount-modal-min-acceptable" type="text" />
+                        <br />
+                        <input class="btn btn-success" id="insert" name="insert" onclick="addDisccountCodeInsert()"
+                            style="float: left" type="button" value="افزودن" />
+                        <br />
+                        <br />
+                        <h4 align="right" color="white"></h4>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
-<!-- modal for showing order detail -->
-<div align="right" class="order-detail-modal" id="order-detail-modal-id">
-    <div align="right" class="order-detail-modal-dialog">
-        <div align="right" class="order-detail-modal-content">
-            <div class="order-detail-modal-header">
-                <h4 align="right" class="order-detail-modal-title">جزییات سفارش</h4>
-            </div>
-            <div class="order-detail-modal-body">
-                <div id="order-detail-modal-insert_form">
-                    <h4 align="right" color="white"></h4>
-                    <table class="order-detail-table table-bordered">
-                        <tbody align="right" class="orders_tbody">
-                        </tbody>
-                    </table>
-                    <h4 align="right" color="white"></h4>
-                    <!--                    <input type="submit" name="insert" id="insert_btn" value="تایید" class="btn btn-success"-->
-                    <!--                           onclick=refresh()/>-->
-                    <h4 align="right" color="white"></h4>
+    <!-- modal for showing order detail -->
+    <div align="right" class="order-detail-modal" id="order-detail-modal-id">
+        <div align="right" class="order-detail-modal-dialog">
+            <div align="right" class="order-detail-modal-content">
+                <div class="order-detail-modal-header">
+                    <h4 align="right" class="order-detail-modal-title">جزییات سفارش</h4>
+                </div>
+                <div class="order-detail-modal-body">
+                    <div id="order-detail-modal-insert_form">
+                        <h4 align="right" color="white"></h4>
+                        <table class="order-detail-table table-bordered">
+                            <tbody align="right" class="orders_tbody">
+                            </tbody>
+                        </table>
+                        <h4 align="right" color="white"></h4>
+                        <!--                    <input type="submit" name="insert" id="insert_btn" value="تایید" class="btn btn-success"-->
+                        <!--                           onclick=refresh()/>-->
+                        <h4 align="right" color="white"></h4>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- modal for adding off food -->
-<div align="right" class="add-off-food-modal" id="add-off-food-modal-id">
-    <div align="right" class="add-off-food-modal-dialog">
-        <div align="right" class="add-off-food-modal-content">
-            <div align="right" class="add-off-food-modal-header">
-                <h4 align="right" class="add-off-food-modal-title">افزودن غذای تخفیف دار</h4>
-            </div>
-            <div align="right" class="add-off-food-modal-body">
-                <div id="add-off-food-modal-insert_form">
-                    <h4 align="right" color="white"></h4>
-                    <select id="add-off-food-offs-list" style="text-align: right"></select>
-                    <label align="right" style="margin-left: 10px">درصد تخفیف</label>
-                    <select id="add-off-food-foods-list" style="margin-left: 20px; text-align: right"></select>
-                    <label align="right" style="margin-left: 10px">غذا</label>
-                    <br/>
-                    <button class="btn btn-success" name="insert" onclick="insertOffFood()" style="float: left"
+    <!-- modal for adding off food -->
+    <div align="right" class="add-off-food-modal" id="add-off-food-modal-id">
+        <div align="right" class="add-off-food-modal-dialog">
+            <div align="right" class="add-off-food-modal-content">
+                <div align="right" class="add-off-food-modal-header">
+                    <h4 align="right" class="add-off-food-modal-title">افزودن غذای تخفیف دار</h4>
+                </div>
+                <div align="right" class="add-off-food-modal-body">
+                    <div id="add-off-food-modal-insert_form">
+                        <h4 align="right" color="white"></h4>
+                        <select id="add-off-food-offs-list" style="text-align: right"></select>
+                        <label align="right" style="margin-left: 10px">درصد تخفیف</label>
+                        <select id="add-off-food-foods-list" style="margin-left: 20px; text-align: right"></select>
+                        <label align="right" style="margin-left: 10px">غذا</label>
+                        <br />
+                        <button class="btn btn-success" name="insert" onclick="insertOffFood()" style="float: left"
                             type="button">افزودن
-                    </button>
-                    <br/>
-                    <br/>
-                    <h4 align="right" color="white"></h4>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- modal for adding food -->
-<div align="right" class="add-food-modal" id="add-food-modal-id">
-    <div align="right" class="modal-dialog">
-        <div align="right" class="add-food-modal-content">
-            <div align="right" class="add-food-modal-header">
-                <h4 align="right" class="modal-title">افزودن غذا</h4>
-            </div>
-            <div align="right" class="add-food-modal-body">
-                <div align="right" id="add-food-modal-insert_form">
-                    <h4 align="right" color="white"></h4>
-                    <label align="right">تصویر غذا</label>
-                    <br/>
-                    <input id="add-form-modal-image-upload" name="image" style="float: left" type="file">
-                    <br/>
-                    <br/>
-                    <label align="right">نام غذا</label>
-                    <br/>
-                    <input class="form-control" id="add-food-modal-name" name="add-food-modal-name" type="text"/>
-                    <br/>
-                    <label align="right">مقدار کالری غذا</label>
-                    <input class="form-control" id="add-food-modal-calories" name="add-food-modal-calories"/>
-                    <br/>
-                    <label align="right">زمان پخت غذا بر حسب دقیقه</label>
-                    <input class="form-control" id="add-food-modal-cook-time" name="add-food-modal-cook-time"
-                           type="text"/>
-                    <br/>
-                    <label align="right">قیمت غذا بر حسب تومان</label>
-                    <input align="right" class="form-control" id="add-food-modal-price" name="add-food-modal-price"
-                           type="text"/>
-                    <br/>
-                    <select id="add-food-modal-categories" style="float: left;text-align: right"></select>
-                    <label align="right">دسته بندی</label>
-                    <br/>
-                    <br/>
-                    <label align="right">توضیحات غذا</label>
-                    <textarea align="right" class="form-control" dir="rtl" id="add-food-modal-description"
-                              name="add-food-modal-description" style="resize: none;"
-                              type="text"></textarea>
-                    <br/>
-                    <button class="btn btn-success" onclick="addFoodInsert()" style="float: left">افزودن</button>
-                    غذای اصلی<input checked=true id="add-food-food-to-eat-checkbox" name="add-food-checkbox"
-                                    style="margin-left : 10px;margin-right : 5px" type="checkbox">
-                    <br/>
-                    <br/>
-                    <h4 align="right" color="white"></h4>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Left column -->
-
-
-<div class="templatemo-flex-row">
-
-    <div class="templatemo-sidebar">
-        <div class="profile-photo-container">
-            <img alt="Profile Photo" class="img-responsive" src="images/sushi-background.jpg">
-            <div class="profile-photo-overlay"></div>
-        </div>
-
-
-        <!-- Search box -->
-
-        <div class="mobile-menu-icon">
-            <i class="fa fa-bars"></i>
-        </div>
-        <nav class="templatemo-left-nav">
-            <ul style="margin-top: 4px;">
-                <li align="right" id="nav_contact_lexeen">
-                    <a href="#">تماس با لکسین</a>
-                </li>
-                <li align="right" id="nav_log_out">
-                    <a href="#">خروج از حساب کاربری</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-    <!-- Main content -->
-    <div class="templatemo-content col-1 light-gray-bg">
-        <div class="templatemo-top-nav-container">
-            <div class="row">
-                <h1 align="right" class="restaurant_name" style="margin-right: 25px"></h1>
-                <nav class="templatemo-top-nav col-lg-12 col-md-12">
-                    <ul class="text-uppercase">
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class="templatemo-content-container">
-
-            <div class="panel panel-default margin-10">
-                <div align="right" class="panel-heading">
-                    <h2 class="text-uppercase">لیست سفارشات</h2>
-
-                </div>
-                <div class="panel-body">
-
-                    <div class="panel panel-default table-responsive" style="height:350px;overflow:auto;">
-                        <table class="table table-striped table-bordered templatemo-user-table">
-                            <thead>
-                            <tr>
-                                <td align="center">ردیف</td>
-                                <td align="center">تاریخ</td>
-                                <td align="center">سفارش دهنده</td>
-                                <td align="center">شماره تلفن</td>
-                                <td align="center">نوع سرو</td>
-                                <td align="center">کد سفارش</td>
-                                <td align="center">انجام</td>
-                                <td align="center">لغو</td>
-                                <td align="center">نمایش</td>
-                            </tr>
-                            </thead>
-                            <tbody class="foods_tbody">
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <div class="panel panel-default margin-10">
-                <div align="right" class="panel-heading">
-                    <h2 class="text-uppercase">لیست غذاها</h2>
-                </div>
-                <div class="panel-body">
-                    <div class="panel panel-default table-responsive" style="height:300px;overflow:auto;">
-                        <table class="table table-striped table-bordered templatemo-user-table">
-                            <thead>
-                            <tr>
-                                <td align="center">ردیف</td>
-                                <td align="center">غذا</td>
-                                <td align="center">کالری</td>
-                                <td align="center">زمان پخت</td>
-                                <td align="center">توضیحات</td>
-                                <td align="center">قیمت</td>
-                                <td align="center">وضعیت</td>
-                                <td align="center">حذف</td>
-                            </tr>
-                            </thead>
-                            <tbody class="foods_tbody">
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="form-group">
-                        <button class="templatemo-blue-button" onclick="showAddFoodModal()" type="submit">افزودن
                         </button>
+                        <br />
+                        <br />
+                        <h4 align="right" color="white"></h4>
                     </div>
                 </div>
             </div>
-            <div class="templatemo-flex-row flex-content-row">
-                <div class="col-1">
-                    <div class="panel panel-default margin-10">
-                        <div align="right" class="panel-heading">
-                            <h2 class="text-uppercase">وضعیت جایگاه ها</h2>
-                        </div>
-                        <div class="panel-body">
-                            <div class="panel panel-default table-responsive" style="height:160px;overflow:auto;">
-                                <table class="table table-striped table-bordered templatemo-user-table">
-                                    <thead>
-                                    <thead>
+        </div>
+    </div>
+
+    <!-- modal for adding food -->
+    <div align="right" class="add-food-modal" id="add-food-modal-id">
+        <div align="right" class="modal-dialog">
+            <div align="right" class="add-food-modal-content">
+                <div align="right" class="add-food-modal-header">
+                    <h4 align="right" class="modal-title">افزودن غذا</h4>
+                </div>
+                <div align="right" class="add-food-modal-body">
+                    <div align="right" id="add-food-modal-insert_form">
+                        <h4 align="right" color="white"></h4>
+                        <label align="right">تصویر غذا</label>
+                        <br />
+                        <input id="add-form-modal-image-upload" name="image" style="float: left" type="file">
+                        <br />
+                        <br />
+                        <label align="right">نام غذا</label>
+                        <br />
+                        <input class="form-control" id="add-food-modal-name" name="add-food-modal-name" type="text" />
+                        <br />
+                        <label align="right">مقدار کالری غذا</label>
+                        <input class="form-control" id="add-food-modal-calories" name="add-food-modal-calories" />
+                        <br />
+                        <label align="right">زمان پخت غذا بر حسب دقیقه</label>
+                        <input class="form-control" id="add-food-modal-cook-time" name="add-food-modal-cook-time"
+                            type="text" />
+                        <br />
+                        <label align="right">قیمت غذا بر حسب تومان</label>
+                        <input align="right" class="form-control" id="add-food-modal-price" name="add-food-modal-price"
+                            type="text" />
+                        <br />
+                        <select id="add-food-modal-categories" style="float: left;text-align: right"></select>
+                        <label align="right">دسته بندی</label>
+                        <br />
+                        <br />
+                        <label align="right">توضیحات غذا</label>
+                        <textarea align="right" class="form-control" dir="rtl" id="add-food-modal-description"
+                            name="add-food-modal-description" style="resize: none;" type="text"></textarea>
+                        <br />
+                        <button class="btn btn-success" onclick="addFoodInsert()" style="float: left">افزودن</button>
+                        غذای اصلی<input checked=true id="add-food-food-to-eat-checkbox" name="add-food-checkbox"
+                            style="margin-left : 10px;margin-right : 5px" type="checkbox">
+                        <br />
+                        <br />
+                        <h4 align="right" color="white"></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Left column -->
+
+
+    <div class="templatemo-flex-row">
+
+        <div class="templatemo-sidebar">
+            <div class="profile-photo-container">
+                <img alt="Profile Photo" class="img-responsive" src="images/sushi-background.jpg">
+                <div class="profile-photo-overlay"></div>
+            </div>
+
+
+            <!-- Search box -->
+
+            <div class="mobile-menu-icon">
+                <i class="fa fa-bars"></i>
+            </div>
+            <nav class="templatemo-left-nav">
+                <ul style="margin-top: 4px;">
+                    <li align="right" id="nav_contact_lexeen">
+                        <a href="#">تماس با لکسین</a>
+                    </li>
+                    <li align="right" id="nav_log_out">
+                        <a href="#">خروج از حساب کاربری</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Main content -->
+        <div class="templatemo-content col-1 light-gray-bg">
+            <div class="templatemo-top-nav-container">
+                <div class="row">
+                    <h1 align="right" class="restaurant_name" style="margin-right: 25px"></h1>
+                    <nav class="templatemo-top-nav col-lg-12 col-md-12">
+                        <ul class="text-uppercase">
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="templatemo-content-container">
+
+                <div class="panel panel-default margin-10">
+                    <div align="right" class="panel-heading">
+                        <h2 class="text-uppercase">لیست سفارشات</h2>
+
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="panel panel-default table-responsive" style="height:350px;overflow:auto;">
+                            <table class="table table-striped table-bordered templatemo-user-table">
+                                <thead>
                                     <tr>
                                         <td align="center">ردیف</td>
-                                        <td align="center">میز</td>
-                                        <td align="center">وضعیت</td>
-                                        <td align="center">دسترسی</td>
+                                        <td align="center">تاریخ</td>
+                                        <td align="center">سفارش دهنده</td>
+                                        <td align="center">شماره تلفن</td>
+                                        <td align="center">نوع سرو</td>
+                                        <td align="center">کد سفارش</td>
+                                        <td align="center">انجام</td>
+                                        <td align="center">لغو</td>
+                                        <td align="center">نمایش</td>
                                     </tr>
+                                </thead>
+                                <tbody class="foods_tbody">
 
-                                    </thead>
-                                    <tbody class="foods_tbody">
-
-                                    </tbody>
-                                </table>
-                            </div>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+                </div>
 
-                    <div class="templatemo-flex-row flex-content-row">
-                        <div class="col-1">
-                            <div class="templatemo-content-widget pink-bg">
-                                <h2 align="right" class="text-uppercase margin-bottom-10">اخطار</h2>
-                                <p align="right" class="panel_alarm margin-bottom-0">هیچ اخطاری موجود نیست.</p>
+                <div class="panel panel-default margin-10">
+                    <div align="right" class="panel-heading">
+                        <h2 class="text-uppercase">لیست غذاها</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="panel panel-default table-responsive" style="height:300px;overflow:auto;">
+                            <table class="table table-striped table-bordered templatemo-user-table">
+                                <thead>
+                                    <tr>
+                                        <td align="center">ردیف</td>
+                                        <td align="center">غذا</td>
+                                        <td align="center">کالری</td>
+                                        <td align="center">زمان پخت</td>
+                                        <td align="center">توضیحات</td>
+                                        <td align="center">قیمت</td>
+                                        <td align="center">وضعیت</td>
+                                        <td align="center">حذف</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="foods_tbody">
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="form-group">
+                            <button class="templatemo-blue-button" onclick="showAddFoodModal()" type="submit">افزودن
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="templatemo-flex-row flex-content-row">
+                    <div class="col-1">
+                        <div class="panel panel-default margin-10">
+                            <div align="right" class="panel-heading">
+                                <h2 class="text-uppercase">وضعیت جایگاه ها</h2>
                             </div>
-                            <div class="templatemo-content-widget blue-bg">
-                                <h2 align="right" class="text-uppercase margin-bottom-10">پیام لکسین</h2>
-                                <p align="right" class="panel_message margin-bottom-0">هیچ پیامی موجود نیست.</p>
+                            <div class="panel-body">
+                                <div class="panel panel-default table-responsive" style="height:160px;overflow:auto;">
+                                    <table class="table table-striped table-bordered templatemo-user-table">
+                                        <thead>
+                                            <thead>
+                                                <tr>
+                                                    <td align="center">ردیف</td>
+                                                    <td align="center">میز</td>
+                                                    <td align="center">وضعیت</td>
+                                                    <td align="center">دسترسی</td>
+                                                </tr>
+
+                                            </thead>
+                                        <tbody class="foods_tbody">
+
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-1">
-                            <div class="panel panel-default margin-10" style="height:235px;overflow:auto;">
-                                <div align="right" class="panel-heading">
-                                    <h2 class="text-uppercase">جستجوی سفارش</h2>
+
+                        <div class="templatemo-flex-row flex-content-row">
+                            <div class="col-1">
+                                <div class="templatemo-content-widget pink-bg">
+                                    <h2 align="right" class="text-uppercase margin-bottom-10">اخطار</h2>
+                                    <p align="right" class="panel_alarm margin-bottom-0">هیچ اخطاری موجود نیست.</p>
                                 </div>
-                                <div class="panel-body">
-                                    <div align="right" class="form-group">
-                                        <label align="right">کد سفارش را وارد کنید</label>
-                                        <input align="right" class="form-control" id="inputOrder" placeholder="کد سفارش"
-                                               type="text">
+                                <div class="templatemo-content-widget blue-bg">
+                                    <h2 align="right" class="text-uppercase margin-bottom-10">پیام لکسین</h2>
+                                    <p align="right" class="panel_message margin-bottom-0">هیچ پیامی موجود نیست.</p>
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <div class="panel panel-default margin-10" style="height:235px;overflow:auto;">
+                                    <div align="right" class="panel-heading">
+                                        <h2 class="text-uppercase">جستجوی سفارش</h2>
                                     </div>
-                                    <div class="form-group">
-                                        <div class="checkbox squaredTwo">
+                                    <div class="panel-body">
+                                        <div align="right" class="form-group">
+                                            <label align="right">کد سفارش را وارد کنید</label>
+                                            <input align="right" class="form-control" id="inputOrder"
+                                                placeholder="کد سفارش" type="text">
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <button class="templatemo-blue-button" onclick="checkClicked()" type="submit">
-                                            جستجو
-                                        </button>
-                                    </div>
+                                        <div class="form-group">
+                                            <div class="checkbox squaredTwo">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="templatemo-blue-button" onclick="checkClicked()"
+                                                type="submit">
+                                                جستجو
+                                            </button>
+                                        </div>
 
 
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="panel panel-default margin-10">
+                            <div align="right" class="panel-heading">
+                                <h2 class="text-uppercase">غذاهای تخفیف دار</h2>
+                            </div>
+                            <div class="panel-body">
+                                <div class="panel panel-default table-responsive" style="height:160px;overflow:auto;">
+                                    <table class="table table-striped table-bordered templatemo-user-table">
+                                        <thead>
+                                            <thead>
+                                                <tr>
+                                                    <td align="center">ردیف</td>
+                                                    <td align="center">نام</td>
+                                                    <td align="center">درصد تخفیف</td>
+                                                    <td align="center">حذف</td>
+                                                </tr>
+
+                                            </thead>
+                                        <tbody class="foods_tbody">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="form-group">
+                                    <button class="templatemo-blue-button" id="add_off_food_btn"
+                                        onclick="showOffFoodsModal()" type="submit">افزودن
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default margin-10">
+                            <div align="right" class="panel-heading">
+                                <h2 class="text-uppercase">کد تخفیف</h2>
+                            </div>
+                            <div class="panel-body">
+                                <div class="panel panel-default table-responsive" style="height:160px;overflow:auto;">
+                                    <table class="table table-striped table-bordered templatemo-user-table">
+                                        <thead>
+                                            <thead>
+                                                <tr>
+                                                    <td align="center">ردیف</td>
+                                                    <td align="center">کد تخفیف</td>
+                                                    <td align="center">درصد تخفیف</td>
+                                                    <td align="center">نرخ تصدیق</td>
+                                                    <td align="center">وضعیت</td>
+                                                    <td align="center">حذف</td>
+                                                </tr>
+
+                                            </thead>
+                                        <tbody class="foods_tbody">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="form-group">
+                                    <button class="templatemo-blue-button" onclick="addDiscountCode()" type="submit">
+                                        افزودن
+                                    </button>
                                 </div>
                             </div>
                         </div>
 
-
-                    </div>
-                    <div class="panel panel-default margin-10">
-                        <div align="right" class="panel-heading">
-                            <h2 class="text-uppercase">غذاهای تخفیف دار</h2>
-                        </div>
-                        <div class="panel-body">
-                            <div class="panel panel-default table-responsive" style="height:160px;overflow:auto;">
-                                <table class="table table-striped table-bordered templatemo-user-table">
-                                    <thead>
-                                    <thead>
-                                    <tr>
-                                        <td align="center">ردیف</td>
-                                        <td align="center">نام</td>
-                                        <td align="center">درصد تخفیف</td>
-                                        <td align="center">حذف</td>
-                                    </tr>
-
-                                    </thead>
-                                    <tbody class="foods_tbody">
-
-                                    </tbody>
-                                </table>
+                        <!-- Third row ends -->
+                        <div class="panel panel-default margin-10">
+                            <div align="right" class="panel-heading">
+                                <h2 class="text-uppercase">نمودار</h2>
                             </div>
-                            <div class="form-group">
-                                <button class="templatemo-blue-button" id="add_off_food_btn" onclick="showOffFoodsModal()"
-                                        type="submit">افزودن
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default margin-10">
-                        <div align="right" class="panel-heading">
-                            <h2 class="text-uppercase">کد تخفیف</h2>
-                        </div>
-                        <div class="panel-body">
-                            <div class="panel panel-default table-responsive" style="height:160px;overflow:auto;">
-                                <table class="table table-striped table-bordered templatemo-user-table">
-                                    <thead>
-                                    <thead>
-                                    <tr>
-                                        <td align="center">ردیف</td>
-                                        <td align="center">کد تخفیف</td>
-                                        <td align="center">درصد تخفیف</td>
-                                        <td align="center">نرخ تصدیق</td>
-                                        <td align="center">وضعیت</td>
-                                        <td align="center">حذف</td>
-                                    </tr>
-
-                                    </thead>
-                                    <tbody class="foods_tbody">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="form-group">
-                                <button class="templatemo-blue-button" onclick="addDiscountCode()" type="submit">
-                                    افزودن
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Third row ends -->
-                    <div class="panel panel-default margin-10">
-                        <div align="right" class="panel-heading">
-                            <h2 class="text-uppercase">نمودار</h2>
-                        </div>
-                        <div class="panel-body">
-                            <select id="chart_intervals" style="  float: right ; margin-top: 10px ; margin-right: 10px">
-                                <option value="1">روزانه</option>
-                                <option value="2">هفتگی</option>
-                                <option value="3">ماهانه</option>
-                                <option value="4">سالانه</option>
-                            </select>
-                            <div class="templatemo-flex-row flex-content-row templatemo-overflow-hidden">
-                                <!-- overflow hidden for iPad mini landscape view-->
-                                <div class="col-1 templatemo-overflow-hidden">
-                                    <div class="templatemo-content-widget white-bg templatemo-overflow-hidden">
-                                        <div class="templatemo-flex-row flex-content-row">
-                                            <div class="col-1 col-lg-6 col-md-12">
-                                                <h2 class="text-center">فروش غذا</h2>
-                                                <div class="templatemo-chart" id="pie_chart_div"></div>
-                                                <!-- Pie chart div -->
-                                            </div>
-                                            <div class="col-1 col-lg-6 col-md-12">
-                                                <h2 class="text-center">رزرو جایگاه<span class="badge"></span></h2>
-                                                <div class="templatemo-chart" id="bar_chart_div"></div>
-                                                <!-- Bar chart div -->
+                            <div class="panel-body">
+                                <select id="chart_intervals"
+                                    style="  float: right ; margin-top: 10px ; margin-right: 10px">
+                                    <option value="1">روزانه</option>
+                                    <option value="2">هفتگی</option>
+                                    <option value="3">ماهانه</option>
+                                    <option value="4">سالانه</option>
+                                </select>
+                                <div class="templatemo-flex-row flex-content-row templatemo-overflow-hidden">
+                                    <!-- overflow hidden for iPad mini landscape view-->
+                                    <div class="col-1 templatemo-overflow-hidden">
+                                        <div class="templatemo-content-widget white-bg templatemo-overflow-hidden">
+                                            <div class="templatemo-flex-row flex-content-row">
+                                                <div class="col-1 col-lg-6 col-md-12">
+                                                    <h2 class="text-center">فروش غذا</h2>
+                                                    <div class="templatemo-chart" id="pie_chart_div"></div>
+                                                    <!-- Pie chart div -->
+                                                </div>
+                                                <div class="col-1 col-lg-6 col-md-12">
+                                                    <h2 class="text-center">رزرو جایگاه<span class="badge"></span></h2>
+                                                    <div class="templatemo-chart" id="bar_chart_div"></div>
+                                                    <!-- Bar chart div -->
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -428,27 +429,27 @@
             </div>
         </div>
     </div>
-</div>
 
-<script src="js/templatemo-script.js" type="text/javascript"></script>
-<script src="https://www.google.com/jsapi"></script>
-<script src="js/show_discount_code_inserter.js" type="text/javascript"></script>
-<script src="js/add_discount_code.js" type="text/javascript"></script>
-<script src="js/insert_off_food.js" type="text/javascript"></script>
-<script src="js/show_add_food_modal.js" type="text/javascript"></script>
-<script src="js/add_food.js" type="text/javascript"></script>
-<script src="js/check_order_clicked.js" type="text/javascript"></script>
-<script src="js/on_chart_option_change_listener.js" type="text/javascript"></script>
-<script src="js/show_off_foods_modal.js" type="text/javascript"></script>
-<script src="js/restaurant_header_maker.js" type="text/javascript"></script>
-<script src="js/panel_alarm_maker.js" type="text/javascript"></script>
-<script src="js/panel_message_maker.js" type="text/javascript"></script>
-<script src="js/off_foods_table_maker.js" type="text/javascript"></script>
-<script src="js/tables_table_maker.js" type="text/javascript"></script>
-<script src="js/discounts_table_maker.js" type="text/javascript"></script>
-<script src="js/foods_table_maker.js" type="text/javascript"></script>
-<script src="js/interval_order_table_maker.js" type="text/javascript"></script>
-<script src="js/main.js" type="text/javascript"></script>
-<script src="js/order_detail_table_maker.js" type="text/javascript"></script>
+    <script src="js/templatemo-script.js" type="text/javascript"></script>
+    <script src="https://www.google.com/jsapi"></script>
+    <script src="js/show_discount_code_inserter.js" type="text/javascript"></script>
+    <script src="js/add_discount_code.js" type="text/javascript"></script>
+    <script src="js/insert_off_food.js" type="text/javascript"></script>
+    <script src="js/show_add_food_modal.js" type="text/javascript"></script>
+    <script src="js/add_food.js" type="text/javascript"></script>
+    <script src="js/check_order_clicked.js" type="text/javascript"></script>
+    <script src="js/on_chart_option_change_listener.js" type="text/javascript"></script>
+    <script src="js/show_off_foods_modal.js" type="text/javascript"></script>
+    <script src="js/restaurant_header_maker.js" type="text/javascript"></script>
+    <script src="js/panel_alarm_maker.js" type="text/javascript"></script>
+    <script src="js/panel_message_maker.js" type="text/javascript"></script>
+    <script src="js/off_foods_table_maker.js" type="text/javascript"></script>
+    <script src="js/tables_table_maker.js" type="text/javascript"></script>
+    <script src="js/discounts_table_maker.js" type="text/javascript"></script>
+    <script src="js/foods_table_maker.js" type="text/javascript"></script>
+    <script src="js/interval_order_table_maker.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+    <script src="js/order_detail_table_maker.js" type="text/javascript"></script>
 </body>
+
 </html>
