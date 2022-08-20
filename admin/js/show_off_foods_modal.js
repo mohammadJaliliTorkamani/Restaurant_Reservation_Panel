@@ -17,7 +17,7 @@ function showOffFoodsModal() {
     offSelect.innerHTML = "";
     jQuery.ajax({
         type: "GET",
-        url: 'https://lexeen.ir/kntu_project/api/panel_api/food_api/available_valid_foods.php',
+        url: 'https://lexeen-service.ir/api/panel_api/food_api/available_valid_foods.php',
         dataType: 'json',
         data: {
             Token: getCookie("Lexin_Token")
@@ -33,7 +33,7 @@ function showOffFoodsModal() {
                 });
                 jQuery.ajax({
                     type: "GET",
-                    url: 'https://lexeen.ir/kntu_project/api/general_api/offs.php',
+                    url: 'https://lexeen-service.ir/api/general_api/offs.php',
                     dataType: 'json',
                     success: function (obj, textstatus) {
                         if (obj != null) {

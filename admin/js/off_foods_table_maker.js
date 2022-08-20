@@ -11,7 +11,7 @@ function getCookie(name) {
 
 jQuery.ajax({
     type: "GET",
-    url: 'https://lexeen.ir/kntu_project/api/panel_api/food_api/off_foods.php',
+    url: 'https://lexeen-service.ir/api/panel_api/food_api/off_foods.php',
     dataType: 'json',
     data: 'Token=' + getCookie('Lexin_Token'),
     success: function (obj, textstatus) {
@@ -52,7 +52,7 @@ jQuery.ajax({
                         if (result.value) {
                             jQuery.ajax({
                                 type: "GET",
-                                url: 'https://lexeen.ir/kntu_project/api/panel_api/food_api/configure_off_food.php',
+                                url: 'https://lexeen-service.ir/api/panel_api/food_api/configure_off_food.php',
                                 dataType: 'json',
                                 data: {
                                     food_id: data.food_id,
@@ -68,7 +68,7 @@ jQuery.ajax({
                                                 'تخفیف غذا با موفقیت حذف شد',
                                                 'success'
                                             ).then((result) => {
-                                                window.location.replace("https://panel.lexeen.ir/admin");
+                                                window.location.replace("https://panel.lexeen-service.ir/admin");
                                             })
                                         } else {
                                             alert(obj.message);
@@ -102,7 +102,7 @@ jQuery.ajax({
                 tabBody.appendChild(row);
             });
         } else if (obj == null) {
-            //window.location.replace("https://panel.lexeen.ir/");
+            //window.location.replace("https://panel.lexeen-service.ir/");
         }
     }
 });

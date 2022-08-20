@@ -16,7 +16,7 @@ function checkClicked() {
     else {
         jQuery.ajax({
             type: "GET",
-            url: 'https://lexeen.ir/kntu_project/api/panel_api/orders_api/order_of_qrcode.php',
+            url: 'https://lexeen-service.ir/api/panel_api/orders_api/order_of_qrcode.php',
             dataType: 'json',
             data: {
                 qrcode_value: text,

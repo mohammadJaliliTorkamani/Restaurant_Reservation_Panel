@@ -10,7 +10,7 @@ function getCookie(name) {
 }
 
 jQuery.ajax({
-    url: "https://lexeen.ir/kntu_project/api/panel_api/food_api/foods.php",
+    url: "https://lexeen-service.ir/api/panel_api/food_api/foods.php",
     type: 'GET',
     data: 'Token=' + getCookie('Lexin_Token'),
     success: function (obj, textStatus, jQxhr) {
@@ -62,7 +62,7 @@ jQuery.ajax({
                         type: "GET",
                         crossOrigin: true,
                         contentType: 'application/x-www-form-urlencoded',
-                        url: 'https://lexeen.ir/kntu_project/api/panel_api/food_api/toggle_food_accessbility.php',
+                        url: 'https://lexeen-service.ir/api/panel_api/food_api/toggle_food_accessbility.php',
                         dataType: 'json',
                         data: {
                             food_id: data.id,
@@ -77,7 +77,7 @@ jQuery.ajax({
                                         'وضعیت غذا با موفقیت تغییر یافت',
                                         'success'
                                     ).then((result) => {
-                                        window.location.replace("https://panel.lexeen.ir/admin");
+                                        window.location.replace("https://panel.lexeen-service.ir/admin");
                                     })
                                 } else {
                                     alert(obj.message);
@@ -120,7 +120,7 @@ jQuery.ajax({
                                 type: "POST",
                                 crossOrigin: true,
                                 contentType: 'application/x-www-form-urlencoded',
-                                url: 'https://lexeen.ir/kntu_project/api/panel_api/food_api/configure_food.php',
+                                url: 'https://lexeen-service.ir/api/panel_api/food_api/configure_food.php',
                                 dataType: 'json',
                                 data: {
                                     id: data.id,
@@ -135,7 +135,7 @@ jQuery.ajax({
                                                 'غذا با موفقیت حذف شد',
                                                 'success'
                                             ).then((result) => {
-                                                window.location.replace("https://panel.lexeen.ir/admin");
+                                                window.location.replace("https://panel.lexeen-service.ir/admin");
                                             })
                                         } else {
                                             alert(obj.message);

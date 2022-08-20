@@ -16,7 +16,7 @@ function insertOffFood() {
     let selectedOffID = restaurantOffs[selectedOffIndex].id;
     jQuery.ajax({
         type: "GET",
-        url: "https://lexeen.ir/kntu_project/api/panel_api/food_api/configure_off_food.php",
+        url: "https://lexeen-service.ir/api/panel_api/food_api/configure_off_food.php",
         dataType: "json",
         data: {
             submit_to_add: "true",
@@ -32,7 +32,7 @@ function insertOffFood() {
                         'تخفیف غذا با موفقیت افزوده شد',
                         'success'
                     ).then((result) => {
-                        window.location.replace("https://panel.lexeen.ir/admin");
+                        window.location.replace("https://panel.lexeen-service.ir/admin");
                     })
                 } else {
                     Swal.fire(

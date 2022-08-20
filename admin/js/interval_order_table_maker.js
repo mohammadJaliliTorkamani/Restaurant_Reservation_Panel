@@ -11,7 +11,7 @@ function getCookie(name) {
 
 jQuery.ajax({
     type: "GET",
-    url: 'https://lexeen.ir/kntu_project/api/panel_api/orders_api/orders_of_interval.php',
+    url: 'https://lexeen-service.ir/api/panel_api/orders_api/orders_of_interval.php',
     dataType: 'json',
     data: 'Token=' + getCookie('Lexin_Token'),
     success: function (obj, textstatus) {
@@ -65,7 +65,7 @@ jQuery.ajax({
                     cell7.addEventListener("click", function () {
                         jQuery.ajax({
                             type: "GET",
-                            url: 'https://lexeen.ir/kntu_project/api/panel_api/orders_api/configure_order_status.php',
+                            url: 'https://lexeen-service.ir/api/panel_api/orders_api/configure_order_status.php',
                             dataType: 'json',
                             data: {
                                 status: 'done',
@@ -80,7 +80,7 @@ jQuery.ajax({
                                             'سفارش مورد نظر انجام شد',
                                             'success'
                                         ).then((result) => {
-                                            window.location.replace("https://panel.lexeen.ir/admin");
+                                            window.location.replace("https://panel.lexeen-service.ir/admin");
                                         })
                                     } else {
                                         alert(obj.message);
@@ -128,7 +128,7 @@ jQuery.ajax({
 
                                 jQuery.ajax({
                                     type: "GET",
-                                    url: 'https://lexeen.ir/kntu_project/api/panel_api/orders_api/configure_order_status.php',
+                                    url: 'https://lexeen-service.ir/api/panel_api/orders_api/configure_order_status.php',
                                     dataType: 'json',
                                     data: {
                                         status: 'discarded',
@@ -144,7 +144,7 @@ jQuery.ajax({
                                                     'سفارش مورد نظر لغو شد',
                                                     'success'
                                                 ).then((result) => {
-                                                    window.location.replace("https://panel.lexeen.ir/admin");
+                                                    window.location.replace("https://panel.lexeen-service.ir/admin");
                                                 })
 
                                             }
@@ -181,7 +181,7 @@ jQuery.ajax({
 
                     jQuery.ajax({
                         type: "GET",
-                        url: 'https://lexeen.ir/kntu_project/api/panel_api/orders_api/order_of_qrcode.php',
+                        url: 'https://lexeen-service.ir/api/panel_api/orders_api/order_of_qrcode.php',
                         dataType: 'json',
                         data: {
                             qrcode_value: data.qrCodeValue,
@@ -225,7 +225,7 @@ jQuery.ajax({
                 tabBody.appendChild(row);
             });
         } else if (obj == null) {
-            window.location.replace("https://panel.lexeen.ir/");
+            window.location.replace("https://panel.lexeen-service.ir/");
         }
     }
 });

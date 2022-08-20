@@ -30,7 +30,7 @@ function drawOnPage(pos) {
     data.addColumn('number', 'تعداد');
     jQuery.ajax({
         type: "GET",
-        url: 'https://lexeen.ir/kntu_project/api/panel_api/food_api/ordered_foods_chart.php',
+        url: 'https://lexeen-service.ir/api/panel_api/food_api/ordered_foods_chart.php',
         dataType: 'json',
         data: {
             Token: getCookie('Lexin_Token'),
@@ -50,7 +50,7 @@ function drawOnPage(pos) {
                 var barChart = new google.visualization.BarChart(document.getElementById('bar_chart_div'));
                 barChart.draw(data, options);
             } else if (obj == null) {
-                window.location.replace("https://panel.lexeen.ir/");
+                window.location.replace("https://panel.lexeen-service.ir/");
             }
         }
     });

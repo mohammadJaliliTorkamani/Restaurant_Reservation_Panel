@@ -183,7 +183,7 @@ document.getElementById("login_btn").addEventListener("click", e => {
         }
 
         $.ajax({
-            url: 'https://lexeen.ir/kntu_project/api/panel_api/user_api/login.php',
+            url: 'https://lexeen-service.ir/api/panel_api/user_api/login.php',
             type: 'post',
             data: {
                 username: username,
@@ -203,7 +203,7 @@ document.getElementById("login_btn").addEventListener("click", e => {
                         // setCookie('SECRET',secret,1);
                         // setCookie('IV',iv,1);
 
-                        window.location = 'https://panel.lexeen.ir/admin';
+                        window.location = 'https://panel.lexeen-service.ir/admin';
                         break
 
                     case 100:

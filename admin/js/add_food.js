@@ -38,7 +38,7 @@ function addFoodInsert() {
         formdata.append('description', foodDescripntion);
         jQuery.ajax({
             type: "POST",
-            url: 'https://lexeen.ir/kntu_project/api/panel_api/food_api/configure_food.php',
+            url: 'https://lexeen-service.ir/api/panel_api/food_api/configure_food.php',
             dataType: 'json',
             contentType: false,
             processData: false,
@@ -50,7 +50,7 @@ function addFoodInsert() {
                         let insertedFoodID = obj0['insertedFoodID'];
                         jQuery.ajax({
                             type: "GET",
-                            url: 'https://lexeen.ir/kntu_project/api/panel_api/food_api/configure_food_category.php',
+                            url: 'https://lexeen-service.ir/api/panel_api/food_api/configure_food_category.php',
                             dataType: 'json',
                             data: {
                                 submit_to_add: "true",
@@ -66,7 +66,7 @@ function addFoodInsert() {
                                             'غذا با موفقیت افزوده شد',
                                             'success'
                                         ).then((result) => {
-                                            window.location.replace("https://panel.lexeen.ir/admin");
+                                            window.location.replace("https://panel.lexeen-service.ir/admin");
                                         })
                                     } else {
                                         Swal.fire(

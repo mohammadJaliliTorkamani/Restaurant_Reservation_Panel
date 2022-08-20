@@ -11,7 +11,7 @@ function getCookie(name) {
 
 jQuery.ajax({
     type: "GET",
-    url: 'https://lexeen.ir/kntu_project/api/panel_api/tables_api/tables.php',
+    url: 'https://lexeen-service.ir/api/panel_api/tables_api/tables.php',
     dataType: 'json',
     data: 'Token=' + getCookie('Lexin_Token'),
     success: function (obj, textstatus) {
@@ -41,7 +41,7 @@ jQuery.ajax({
                 cell4.addEventListener("click", function () {
                     jQuery.ajax({
                         type: "GET",
-                        url: 'https://lexeen.ir/kntu_project/api/panel_api/tables_api/toggle_lexin_table.php',
+                        url: 'https://lexeen-service.ir/api/panel_api/tables_api/toggle_lexin_table.php',
                         dataType: 'json',
                         data: {
                             lexin_table_id: data.id,
@@ -56,7 +56,7 @@ jQuery.ajax({
                                         'وضعیت جایگاه با موفقیت تغییر یافت',
                                         'success'
                                     ).then((result) => {
-                                        window.location.replace("https://panel.lexeen.ir/admin");
+                                        window.location.replace("https://panel.lexeen-service.ir/admin");
                                     })
                                 } else {
                                     alert(obj.message);
@@ -88,7 +88,7 @@ jQuery.ajax({
                 tabBody.appendChild(row);
             });
         } else if (obj == null) {
-            //window.location.replace("https://panel.lexeen.ir/");
+            //window.location.replace("https://panel.lexeen-service.ir/");
         }
     }
 });
