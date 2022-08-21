@@ -34,16 +34,16 @@ function showOrderDetail(qrCodeValue, data, obj) {
     let issueTrackingCode_text2 = document.createTextNode("کد سفارش");
     let type_text1 = document.createTextNode(data.delivery ? "حضوری" : "تحویل");
     let type_text2 = document.createTextNode("نوع سفارش");
-    let discountCode_text1 = document.createTextNode(data.discount_id == -1 ? "ندارد" : data.discount_code);
+    let discountCode_text1 = document.createTextNode(data.discount_id < 1 ? "ندارد" : data.discount_code);
     let discountCode_text2 = document.createTextNode("کد تخفیف");
     let price_text1 = document.createTextNode(data.totalPrice);
-    let price_text2 = document.createTextNode("قیمت کل");
+    let price_text2 = document.createTextNode("(تومان) قیمت کل");
     let orderedFoods_text2 = document.createTextNode("غذاهای سفارش داده شده");
     let orderedLexinTables_text2 = document.createTextNode("جایگاه های رزرو شده");
     let url = "http://maps.google.com/maps?daddr=" + data.latitude + "," + data.longitude;
     let address_text1 = document.createTextNode("برای نمایش در نقشه کلیک کنید");
     let address_text2 = document.createTextNode("نشانی جرافیایی مقصد");
-    let blockDetail_text1 = document.createTextNode(data.delivery ? ("پلاک : " + data.blockNo + "طبقه : " + data.floor + "واحد : " + data.unit) : "ساختمان رستوران");
+    let blockDetail_text1 = document.createTextNode(data.delivery ? ("پلاک : " + data.blockNo + " طبقه : " + data.floor + " واحد : " + data.unit) : "ساختمان رستوران");
     let blockDetail_text2 = document.createTextNode("مشخصات ساختمانی");
     let status_text1 = document.createTextNode(data.status == "In Queue" ? ("موعد سفارش فرا نرسیده است") : data.status == "Done" ? "انجام شد" : "توسط رستوران لغو شد");
     let status_text2 = document.createTextNode("وضعیت سفارش");
@@ -54,8 +54,8 @@ function showOrderDetail(qrCodeValue, data, obj) {
     let orderedLexinTables_text1;
     let bills = data['specifiedBills'];
 
-    foodBiils = []
-    tableBills = []
+    foodBiils=[]
+    tableBills=[]
 
     bills.forEach(function (billData, billIndex) {
         if (billData.foodName != "-1") {
@@ -66,11 +66,11 @@ function showOrderDetail(qrCodeValue, data, obj) {
     });
 
     foodBiils.forEach(function (billData, billIndex) {
-        foodBillsText += (((billIndex < foodBiils.length - 1) ? " " : " , ")) + billData.foodName + " ( " + billData.counter + " عدد )";
+        foodBillsText += ( ((billIndex < foodBiils.length-1) ? " " : " , ")) +  billData.foodName + " ( " + billData.counter + " عدد )";
     });
 
     tableBills.forEach(function (billData, billIndex) {
-        lexinTablesBillsText += (((billIndex < tableBills.length - 1) ? " , " : " ")) + "جایگاه " + billData.lexinTableLabel + " ( طبقه " + billData.lexinTableRoof + ") "
+        lexinTablesBillsText += ( ((billIndex < tableBills.length-1) ? " , " : " ")) + "جایگاه " + billData.lexinTableLabel + " ( طبقه " + billData.lexinTableRoof + ") "
     });
 
 
@@ -100,7 +100,7 @@ function showOrderDetail(qrCodeValue, data, obj) {
     status_cell1.append(status_text1);
     status_cell2.append(status_text2);
 
-    address_cell1.addEventListener("click", function () {
+    address_cell1.addEventListener("click",function(){
         window.open(url);
     });
     let ordererName_row = document.createElement("tr");

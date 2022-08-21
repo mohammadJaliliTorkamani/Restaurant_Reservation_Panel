@@ -8,10 +8,9 @@ function getCookie(name) {
     }
     return null;
 }
-
 jQuery.ajax({
     type: "GET",
-    url: 'https://lexeen-service.ir/api/panel_api/tables_api/tables.php',
+    url: 'https://lexeen.ir/kntu_project/api/panel_api/tables_api/tables.php',
     dataType: 'json',
     data: 'Token=' + getCookie('Lexin_Token'),
     success: function (obj, textstatus) {
@@ -41,27 +40,27 @@ jQuery.ajax({
                 cell4.addEventListener("click", function () {
                     jQuery.ajax({
                         type: "GET",
-                        url: 'https://lexeen-service.ir/api/panel_api/tables_api/toggle_lexin_table.php',
+                        url: 'https://lexeen.ir/kntu_project/api/panel_api/tables_api/toggle_lexin_table.php',
                         dataType: 'json',
                         data: {
                             lexin_table_id: data.id,
                             submit_to_enable: !data.availability,
-                            Token: getCookie('Lexin_Token')
+                            Token : getCookie('Lexin_Token')
                         },
                         success: function (obj, textstatus) {
                             if (obj != null) {
                                 if (obj.resultCode == 200) {
-                                    Swal.fire(
-                                        '!موفق',
-                                        'وضعیت جایگاه با موفقیت تغییر یافت',
-                                        'success'
-                                    ).then((result) => {
-                                        window.location.replace("https://panel.lexeen-service.ir/admin");
-                                    })
-                                } else {
-                                    alert(obj.message);
+                                            Swal.fire(
+                                                '!موفق',
+                                                'وضعیت جایگاه با موفقیت تغییر یافت',
+                                                'success'
+                                            ).then((result) => {
+                                                window.location.replace("https://panel.lexeen.ir/admin");
+                                            })
+                                        } else {
+                                            alert(obj.message);
 
-                                }
+                                        }
                             }
                         }
                     });
@@ -88,7 +87,7 @@ jQuery.ajax({
                 tabBody.appendChild(row);
             });
         } else if (obj == null) {
-            //window.location.replace("https://panel.lexeen-service.ir/");
+            //window.location.replace("https://panel.lexeen.ir/");
         }
     }
 });

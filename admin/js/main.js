@@ -15,7 +15,7 @@ function getCookie(name) {
 
 if (getCookie('Lexin_Token') == null) {
     alert("دسترسی غیر مجاز")
-    window.location = "https://panel.lexeen-service.ir"
+    window.location = "https://panel.lexeen.ir"
 }
 
 let nav_log_out = document.getElementById("nav_log_out");
@@ -26,7 +26,7 @@ nav_log_out.addEventListener("click", function (event) {
 
     Swal.fire({
         title: 'تاییدیه',
-        text: "از خروج اطمینان دارید؟",
+        text: "از خروج از حساب کاربری اطمینان دارید؟",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -35,24 +35,23 @@ nav_log_out.addEventListener("click", function (event) {
         cancelButtonText: 'خیر',
     }).then((result) => {
         if (result.value) {
-            ////////////////
             jQuery.ajax({
                 type: "POST",
                 crossOrigin: true,
                 contentType: 'application/x-www-form-urlencoded',
-                url: 'https://lexeen-service.ir/api/panel_api/user_api/log_out.php',
+                url: 'https://lexeen.ir/kntu_project/api/panel_api/user_api/log_out.php',
                 dataType: 'json',
                 data: {
                     Token: getCookie('Lexin_Token')
                 },
                 success: function (obj, textstatus) {
                     if (obj != null) {
-                        if (obj.resultCode == 200) {
+                        if (obj.code == 200) {
                             eraseCookie('Lexin_Token')
-                            window.location.replace("https://panel.lexeen-service.ir/admin");
+                            window.location.replace("https://panel.lexeen.ir/");
                         } else {
                             Swal.fire(
-                                '!خخطا',
+                                '!خطا',
                                 obj.message,
                                 'error'
                             )
@@ -61,14 +60,6 @@ nav_log_out.addEventListener("click", function (event) {
                     }
                 }
             });
-            ////////////////
-            Swal.fire(
-                '!موفق',
-                'غذا با موفقیت حذف شد',
-                'success'
-            ).then((result) => {
-                window.location.replace("https://panel.lexeen-service.ir");
-            })
 
         }
     });

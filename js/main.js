@@ -3,18 +3,18 @@ var restaurantOffs;
 
 const inputs = document.querySelectorAll(".input");
 
-function setCookie(name, value, days) {
+function setCookie(name,value,days) {
     var expires = "";
     if (days) {
         var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        date.setTime(date.getTime() + (days*24*60*60*1000));
         expires = "; expires=" + date.toUTCString();
     }
-    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
 }
 
-function eraseCookie(name) {
-    document.cookie = name + '=; Max-Age=-99999999;';
+function eraseCookie(name) {   
+    document.cookie = name+'=; Max-Age=-99999999;';  
 }
 
 function addcl() {
@@ -136,7 +136,7 @@ inputs.forEach(input => {
 let username = document.getElementById("login_username");
 
 username.addEventListener("keyup", function (event) {
-    if (event.keyCode == 13) {
+    if (event.keyCode == 13){
         event.preventDefault();
         document.getElementById("login_btn").click();
     }
@@ -145,7 +145,7 @@ username.addEventListener("keyup", function (event) {
 let password = document.getElementById("login_password");
 
 password.addEventListener("keyup", function (event) {
-    if (event.keyCode == 13) {
+    if (event.keyCode == 13){
         event.preventDefault();
         document.getElementById("login_btn").click();
     }
@@ -157,41 +157,41 @@ document.getElementById("login_btn").addEventListener("click", e => {
     let password = document.getElementById("login_password").value;
     if (username.length === 0) {
         Swal.fire(
-            'خطا',
-            'نام کاربری را وارد کنید',
-            'error'
-        )
-
+                                                'خطا',
+                                                'نام کاربری را وارد کنید',
+                                                'error'
+                                            )
+                                            
     } else if (password.length === 0) {
         Swal.fire(
-            'خطا',
-            'کلمه عبور را وارد کنید',
-            'error'
-        )
+                                                'خطا',
+                                                'کلمه عبور را وارد کنید',
+                                                'error'
+                                            )
     } else if (password.length < 8) {
         Swal.fire(
-            'خطا',
-            'کلمه عبور باید حداقل شامل هشت کاراکتر باشد',
-            'error'
-        )
+                                                'خطا',
+                                                'کلمه عبور باید حداقل شامل هشت کاراکتر باشد',
+                                                'error'
+                                            )
     } else {
         var hash = 0, i, chr;
         for (i = 0; i < username.length; i++) {
-            chr = username.charCodeAt(i);
-            hash = ((hash << 5) - hash) + chr;
+            chr   = username.charCodeAt(i);
+            hash  = ((hash << 5) - hash) + chr;
             hash |= 0; // Convert to 32bit integer
         }
-
+        
         $.ajax({
-            url: 'https://lexeen-service.ir/api/panel_api/user_api/login.php',
+            url: 'https://lexeen.ir/kntu_project/api/panel_api/user_api/login.php',
             type: 'post',
             data: {
                 username: username,
                 password: password,
-                uniqueid: 'LEXIN_TOKEN_' + hash + '_'
+                uniqueid: 'LEXIN_TOKEN_'+hash+'_'
             },
-            success: function (data, textStatus, jQxhr) {
-                data = JSON.parse(data);
+            success: function( data, textStatus, jQxhr ){
+                data=JSON.parse(data);
                 switch (data['code']) {
                     case 200:
                         let shared_key = data['shared_key'];
@@ -199,24 +199,24 @@ document.getElementById("login_btn").addEventListener("click", e => {
                         // let secret = hashedPassword.substring(0, 16);
                         // let iv = hashedPassword.substring(hashedPassword.length - 16, hashedPassword.length);
                         eraseCookie('Lexin_Token');
-                        setCookie('Lexin_Token', data['token'], 1);
+                        setCookie('Lexin_Token',data['token'],1);
                         // setCookie('SECRET',secret,1);
                         // setCookie('IV',iv,1);
-
-                        window.location = 'https://panel.lexeen-service.ir/admin';
+                        
+                        window.location='https://panel.lexeen.ir/admin';
                         break
-
+                        
                     case 100:
                         Swal.fire(
-                            'خطا',
-                            data['message'],
-                            'error'
-                        )
+                                                'خطا',
+                                                data['message'],
+                                                'error'
+                                            )
                         break
                 }
             },
-            error: function (jqXhr, textStatus, errorThrown) {
-                alert(JSON.stringify(jqXhr) + "," + JSON.stringify(textStatus) + "," + JSON.stringify(errorThrown));
+            error: function( jqXhr, textStatus, errorThrown ){
+                alert( JSON.stringify(jqXhr)+","+JSON.stringify(textStatus)+","+JSON.stringify(errorThrown) );
             }
         });
     }

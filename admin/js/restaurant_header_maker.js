@@ -12,7 +12,7 @@ function getCookie(name) {
 let element = document.getElementsByClassName("restaurant_name")[0];
 jQuery.ajax({
     type: "GET",
-    url: 'https://lexeen-service.ir/api/panel_api/user_api/restaurant.php',
+    url: 'https://lexeen.ir/kntu_project/api/panel_api/user_api/restaurant.php',
     dataType: 'json',
     data: 'Token=' + getCookie('Lexin_Token'),
     success: function (obj, textstatus) {
@@ -20,7 +20,7 @@ jQuery.ajax({
             if (element != null)
                 element.innerHTML = "" + obj.name;
         } else if (obj == null) {
-            window.location.replace("https://panel.lexeen-service.ir/");
+            window.location.replace("https://panel.lexeen.ir/");
         }
     }
 });

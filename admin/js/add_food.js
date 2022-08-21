@@ -8,7 +8,6 @@ function getCookie(name) {
     }
     return null;
 }
-
 function addFoodInsert() {
     let selectedCategoryIndex = document.getElementById('add-food-modal-categories').selectedIndex;
     let selectedCategoryID = categories[selectedCategoryIndex].id;
@@ -38,7 +37,7 @@ function addFoodInsert() {
         formdata.append('description', foodDescripntion);
         jQuery.ajax({
             type: "POST",
-            url: 'https://lexeen-service.ir/api/panel_api/food_api/configure_food.php',
+            url: 'https://lexeen.ir/kntu_project/api/panel_api/food_api/configure_food.php',
             dataType: 'json',
             contentType: false,
             processData: false,
@@ -50,31 +49,31 @@ function addFoodInsert() {
                         let insertedFoodID = obj0['insertedFoodID'];
                         jQuery.ajax({
                             type: "GET",
-                            url: 'https://lexeen-service.ir/api/panel_api/food_api/configure_food_category.php',
+                            url: 'https://lexeen.ir/kntu_project/api/panel_api/food_api/configure_food_category.php',
                             dataType: 'json',
                             data: {
                                 submit_to_add: "true",
                                 food_id: insertedFoodID,
                                 category_id: selectedCategoryID,
-                                Token: getCookie("Lexin_Token")
+                                Token : getCookie("Lexin_Token")
                             },
                             success: function (obj, textstatus) {
                                 if (obj != null) {
                                     if (obj0.resultCode == 200) {
-                                        Swal.fire(
-                                            '!موفق',
-                                            'غذا با موفقیت افزوده شد',
-                                            'success'
-                                        ).then((result) => {
-                                            window.location.replace("https://panel.lexeen-service.ir/admin");
-                                        })
-                                    } else {
-                                        Swal.fire(
-                                            '!خطا',
-                                            obj0.message,
-                                            'error'
-                                        )
-                                    }
+                                            Swal.fire(
+                                                '!موفق',
+                                                'غذا با موفقیت افزوده شد',
+                                                'success'
+                                            ).then((result) => {
+                                                window.location.replace("https://panel.lexeen.ir/admin");
+                                            })
+                                        } else {
+                                            Swal.fire(
+                                                '!خطا',
+                                                obj0.message,
+                                                'error'
+                                            )
+                                        }
                                 }
                             }
                         });
