@@ -10,7 +10,7 @@ function getCookie(name) {
 }
 jQuery.ajax({
     type: "GET",
-    url: 'https://lexeen.ir/kntu_project/api/panel_api/user_api/panel_text.php',
+    url: 'https://lexeen-service.ir/api/panel_api/user_api/panel_text.php',
     dataType: 'json',
     data: 'Token=' + getCookie('Lexin_Token'),
     success: function (obj, textstatus) {

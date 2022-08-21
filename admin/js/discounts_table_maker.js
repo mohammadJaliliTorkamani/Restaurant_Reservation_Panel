@@ -10,7 +10,7 @@ function getCookie(name) {
 }
 jQuery.ajax({
     type: "GET",
-    url: 'https://lexeen.ir/kntu_project/api/panel_api/user_api/discounts.php',
+    url: 'https://lexeen-service.ir/api/panel_api/user_api/discounts.php',
     dataType: 'json',
     data: 'Token=' + getCookie('Lexin_Token'),
     success: function (obj, textstatus) {
@@ -29,7 +29,7 @@ jQuery.ajax({
                 var textnode2 = document.createTextNode(data.code);
                 var textnode3 = document.createTextNode(data.percentage);
                 var textnode4 = document.createTextNode(data.min_acceptable);
-                var textnode5 = document.createTextNode( data.capacity + " / " + data.used_counter);
+                var textnode5 = document.createTextNode(data.capacity + " / " + data.used_counter);
                 var textnode6 = document.createTextNode("حذف");
 
                 cell1.append(textnode1);
@@ -56,33 +56,33 @@ jQuery.ajax({
                         confirmButtonText: 'بله ، حذف کن',
                         cancelButtonText: 'خیر',
                     }).then((result) => {
-                        if(result.value){
+                        if (result.value) {
                             jQuery.ajax({
-                        type: "GET",
-                        url: 'https://lexeen.ir/kntu_project/api/panel_api/food_api/configure_discount_code.php',
-                        dataType: 'json',
-                        data: {
-                            code: data.code,
-                            submit_to_add: "false",
-                            Token : getCookie('Lexin_Token')
-                        },
-                        success: function (obj, textstatus) {
-                            if (obj != null) {
-                                if (obj.resultCode == 200) {
+                                type: "GET",
+                                url: 'https://lexeen-service.ir/api/panel_api/food_api/configure_discount_code.php',
+                                dataType: 'json',
+                                data: {
+                                    code: data.code,
+                                    submit_to_add: "false",
+                                    Token: getCookie('Lexin_Token')
+                                },
+                                success: function (obj, textstatus) {
+                                    if (obj != null) {
+                                        if (obj.resultCode == 200) {
                                             Swal.fire(
                                                 '!موفق',
                                                 'کد تخفیف با موفقیت حذف شد',
                                                 'success'
                                             ).then((result) => {
-                                                window.location.replace("https://panel.lexeen.ir/admin");
+                                                window.location.replace("https://panel.lexeen-service.ir/admin");
                                             })
                                         } else {
                                             alert(obj.message);
 
                                         }
-                            }
-                        }
-                    });
+                                    }
+                                }
+                            });
                         }
                     });
                 });
@@ -110,7 +110,7 @@ jQuery.ajax({
                 tabBody.appendChild(row);
             });
         } else if (obj == null) {
-            window.location.replace("https://panel.lexeen.ir/");
+            window.location.replace("https://panel.lexeen-service.ir/");
         }
     }
 });

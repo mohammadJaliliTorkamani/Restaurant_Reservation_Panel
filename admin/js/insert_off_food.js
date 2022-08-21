@@ -16,32 +16,32 @@ function insertOffFood() {
     let selectedOffID = restaurantOffs[selectedOffIndex].id;
     jQuery.ajax({
         type: "GET",
-        url: "https://lexeen.ir/kntu_project/api/panel_api/food_api/configure_off_food.php",
+        url: "https://lexeen-service.ir/api/panel_api/food_api/configure_off_food.php",
         dataType: "json",
         data: {
             submit_to_add: "true",
             food_id: selectedFoodID,
             off_id: selectedOffID,
-            Token : getCookie("Lexin_Token")
+            Token: getCookie("Lexin_Token")
         },
         success: function (obj, textstatus) {
             if (obj != null) {
                 if (obj.resultCode == 200) {
-                                            Swal.fire(
-                                                '!موفق',
-                                                'تخفیف غذا با موفقیت افزوده شد',
-                                                'success'
-                                            ).then((result) => {
-                                                window.location.replace("https://panel.lexeen.ir/admin");
-                                            })
-                                        } else {
-                                            Swal.fire(
-                                                '!خطا',
-                                                obj.message,
-                                                'error'
-                                            )
+                    Swal.fire(
+                        '!موفق',
+                        'تخفیف غذا با موفقیت افزوده شد',
+                        'success'
+                    ).then((result) => {
+                        window.location.replace("https://panel.lexeen-service.ir/admin");
+                    })
+                } else {
+                    Swal.fire(
+                        '!خطا',
+                        obj.message,
+                        'error'
+                    )
 
-                                        }
+                }
             }
         }
     });

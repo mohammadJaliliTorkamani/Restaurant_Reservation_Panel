@@ -15,7 +15,7 @@ function getCookie(name) {
 
 if (getCookie('Lexin_Token') == null) {
     alert("دسترسی غیر مجاز")
-    window.location = "https://panel.lexeen.ir"
+    window.location = "https://panel.lexeen-service.ir"
 }
 
 let nav_log_out = document.getElementById("nav_log_out");
@@ -39,7 +39,7 @@ nav_log_out.addEventListener("click", function (event) {
                 type: "POST",
                 crossOrigin: true,
                 contentType: 'application/x-www-form-urlencoded',
-                url: 'https://lexeen.ir/kntu_project/api/panel_api/user_api/log_out.php',
+                url: 'https://lexeen-service.ir/api/panel_api/user_api/log_out.php',
                 dataType: 'json',
                 data: {
                     Token: getCookie('Lexin_Token')
@@ -48,7 +48,7 @@ nav_log_out.addEventListener("click", function (event) {
                     if (obj != null) {
                         if (obj.code == 200) {
                             eraseCookie('Lexin_Token')
-                            window.location.replace("https://panel.lexeen.ir/");
+                            window.location.replace("https://panel.lexeen-service.ir/");
                         } else {
                             Swal.fire(
                                 '!خطا',

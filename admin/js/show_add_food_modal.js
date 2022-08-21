@@ -18,14 +18,14 @@ function showAddFoodModal() {
     //get available categories and  add it to 'var' and then show modal
     jQuery.ajax({
         type: "GET",
-        url: 'https://lexeen.ir/kntu_project/api/panel_api/user_api/categories.php',
+        url: 'https://lexeen-service.ir/api/panel_api/user_api/categories.php',
         dataType: 'json',
-        data:{
-            Token : getCookie("Lexin_Token")
+        data: {
+            Token: getCookie("Lexin_Token")
         },
         success: function (obj, textstatus) {
             if (obj != null) {
-                categories=[]
+                categories = []
                 categories = obj;
                 obj.forEach(function (data, index) {
                     var opt = document.createElement('option');

@@ -18,7 +18,7 @@ function addDisccountCodeInsert() {
     } else {
         jQuery.ajax({
             type: "GET",
-            url: 'https://lexeen.ir/kntu_project/api/panel_api/food_api/configure_discount_code.php',
+            url: 'https://lexeen-service.ir/api/panel_api/food_api/configure_discount_code.php',
             dataType: 'json',
             data: {
                 submit_to_add: "true",
@@ -26,26 +26,26 @@ function addDisccountCodeInsert() {
                 percentage: discountPercentage,
                 max_usage: maxUsage,
                 min_acceptable: minAcceptable,
-                Token :  getCookie('Lexin_Token')
+                Token: getCookie('Lexin_Token')
             },
             success: function (obj, textstatus) {
                 if (obj.resultCode == 200) {
-                                            Swal.fire(
-                                                '!موفق',
-                                                'کد تخفیف با موفقیت افزوده شد',
-                                                'success'
-                                            ).then((result) => {
-                                                window.location.replace("https://panel.lexeen.ir/admin");
-                                            })
-                                        } else {
-                                            Swal.fire(
-                                                '!خطا',
-                                                obj.message,
-                                                'error'
-                                            )
-                                        
+                    Swal.fire(
+                        '!موفق',
+                        'کد تخفیف با موفقیت افزوده شد',
+                        'success'
+                    ).then((result) => {
+                        window.location.replace("https://panel.lexeen-service.ir/admin");
+                    })
+                } else {
+                    Swal.fire(
+                        '!خطا',
+                        obj.message,
+                        'error'
+                    )
 
-                                        }
+
+                }
             }
         });
     }

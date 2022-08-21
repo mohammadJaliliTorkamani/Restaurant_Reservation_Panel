@@ -34,7 +34,7 @@ function drawOnPage(pos) {
     data2.addColumn('number', 'جایگاه');
     jQuery.ajax({
         type: "GET",
-        url: 'https://lexeen.ir/kntu_project/api/panel_api/food_api/ordered_foods_chart.php',
+        url: 'https://lexeen-service.ir/api/panel_api/food_api/ordered_foods_chart.php',
         dataType: 'json',
         data: {
             Token: getCookie('Lexin_Token'),
@@ -52,13 +52,13 @@ function drawOnPage(pos) {
                 var pieChart = new google.visualization.PieChart(document.getElementById('pie_chart_div'));
                 pieChart.draw(data, options);
             } else if (obj == null) {
-                window.location.replace("https://panel.lexeen.ir/");
+                window.location.replace("https://panel.lexeen-service.ir/");
             }
         }
     });
     jQuery.ajax({
         type: "GET",
-        url: 'https://lexeen.ir/kntu_project/api/panel_api/tables_api/ordered_tables_chart.php',
+        url: 'https://lexeen-service.ir/api/panel_api/tables_api/ordered_tables_chart.php',
         dataType: 'json',
         data: {
             Token: getCookie('Lexin_Token'),
@@ -76,7 +76,7 @@ function drawOnPage(pos) {
                 var barChart2 = new google.visualization.BarChart(document.getElementById('bar_chart_div'));
                 barChart2.draw(data2, options2);
             } else if (obj == null) {
-                window.location.replace("https://panel.lexeen.ir/");
+                window.location.replace("https://panel.lexeen-service.ir/");
             }
         }
     });
